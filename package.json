@@ -1,0 +1,25 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "this is a react project",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tejaspatel2123/react-js.git"
+  },
+  "keywords": [
+    "namasteReact"
+  ],
+  "author": "Tejas patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tejaspatel2123/react-js/issues"
+  },
+  "homepage": "https://github.com/tejaspatel2123/react-js#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
