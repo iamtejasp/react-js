@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgba(255, 166, 0, 0.158);
+}
+
 #root {
   max-width: 1200px;
   margin-inline: auto;
@@ -59,13 +63,15 @@
 }
 
 .cart-body {
+  border: 1px solid black;
   width: 220px;
   padding: 20px 10px;
+  margin: 15px auto;
   background-color: aliceblue;
 }
 .cart-body:hover {
-  border: 1px solid black;
   cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .cart-body .rest-img {
   width: 100%;
@@ -75,7 +81,9 @@
 }
 
 .cart-body h3,
-p {
+p,
+h4 {
   padding-left: 15px;
+  padding-top: 15px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
