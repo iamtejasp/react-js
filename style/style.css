@@ -5,19 +5,23 @@
 }
 
 body {
-  background-color: rgba(255, 166, 0, 0.158);
+  background-color: #b2533e;
+  font-family: "Roboto", sans-serif !important;
 }
 
-#root {
-  max-width: 1200px;
-  margin-inline: auto;
+.nav-bar {
+  background-color: #186f65;
+  position: fixed;
+  width: 100%;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .logo-container {
@@ -41,18 +45,21 @@ body {
 
 .list-links .link a {
   text-decoration: none;
-  color: black;
+  color: #fce09b;
   font-size: 18px;
 }
 
 .btn-link {
   text-decoration: none;
-  color: black;
+  color: #fce09b;
   font-size: 18px;
   padding: 5px 30px;
-  border: 1px solid black;
+  border: 1px solid #b5cb99;
+  transition: 300ms;
 }
-
+.btn-link:hover {
+  background-color: #b2533e;
+}
 .cart-container {
   width: 80%;
   margin-inline: auto;
@@ -63,7 +70,7 @@ body {
 }
 
 .cart-body {
-  border: 1px solid black;
+  border: 1px solid #b5cb99;
   width: 220px;
   padding: 20px 10px;
   margin: 15px auto;
@@ -86,4 +93,24 @@ h4 {
   padding-left: 15px;
   padding-top: 15px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-bar {
+  width: 80%;
+  margin-inline: auto;
+  padding: 150px 10px 20px 20px;
+  text-align: center;
+}
+
+.filter-card {
+  background-color: transparent;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 2px solid #fce09b;
+  color: #fce09b;
+}
+
+.filter-card:hover {
+  background-color: #186f65;
+  cursor: pointer;
 }
