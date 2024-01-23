@@ -2,7 +2,7 @@ import { CART_IMG_URL } from "../utils/constant";
 
 const Card = (prop) => {
   let { name, cloudinaryImageId, cuisines, avgRating, area } =
-    prop.resData.data;
+    prop.resData.info;
   return (
     <div className="cart-body">
       <img

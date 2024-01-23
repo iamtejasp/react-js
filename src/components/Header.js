@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const Header = () => {
+  const [navBtn, setNavBtn] = useState("Login");
   return (
     <div className="nav-bar">
       <div className="nav">
@@ -16,10 +19,27 @@ const Header = () => {
             <a href="#">ContactUS</a>
           </li>
         </ul>
-        <div className="nav-btns">
-          <a href="#" className="btn-link">
-            Cart +
-          </a>
+        <div className="btn">
+          <div className="  nav-btns">
+            <a href="#" className="btn-link">
+              Cart +
+            </a>
+          </div>
+          <div className="nav-btns">
+            <a
+              href="#"
+              className="btn-link"
+              onClick={() => {
+                if (navBtn === "Login") {
+                  setNavBtn("Logout");
+                } else {
+                  setNavBtn("Login");
+                }
+              }}
+            >
+              {navBtn}
+            </a>
+          </div>
         </div>
       </div>
     </div>

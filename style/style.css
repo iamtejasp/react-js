@@ -48,6 +48,12 @@ body {
   color: #fce09b;
   font-size: 18px;
 }
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
 
 .btn-link {
   text-decoration: none;
@@ -65,8 +71,9 @@ body {
   margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: 10px;
+  padding-bottom: 100px;
 }
 
 .cart-body {
@@ -99,7 +106,9 @@ h4 {
   width: 80%;
   margin-inline: auto;
   padding: 150px 10px 20px 20px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .filter-card {
@@ -113,4 +122,28 @@ h4 {
 .filter-card:hover {
   background-color: #186f65;
   cursor: pointer;
+}
+
+.search-input {
+  margin-right: 30px;
+  padding: 10px 20px 10px 20px;
+}
+
+.search-btn {
+  padding: 10px 30px;
+}
+
+.shimmer-body {
+  padding-top: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.shimmer-card {
+  height: 400px;
+  width: 300px;
+  background-color: #975a5a;
 }
