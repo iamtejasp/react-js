@@ -9,6 +9,9 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
+.about-body {
+  color: #fce09b;
+}
 .nav-bar {
   background-color: #186f65;
   position: fixed;

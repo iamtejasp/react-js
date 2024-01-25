@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [navBtn, setNavBtn] = useState("Login");
+
+  //useEffect Is render After the render component
+  //useEffect Have two parameter one is callback function and another is dependecy array
+  //it is not mandatory towrite dependecy arr
+  //if we can write dependecy arr then useEffect is called once at initial
+  //if we cannot write dependecy arr then useEffect is called every time rendering
+
+  useEffect(() => {
+    console.log("UseEffect");
+  }, [navBtn]);
+
+  console.log("Rendered");
   return (
     <div className="nav-bar">
       <div className="nav">

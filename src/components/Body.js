@@ -4,6 +4,9 @@ import Shimmer from "./ShimmerUi";
 
 const Body = () => {
   //create variable using hooks ==> using useState
+  //create at top
+  //can not write out side of component
+  //never create inside any block =>if(){}
   const [restaurantList, setRestaurantList] = useState([]);
   const [allRestList, setAllRestList] = useState([]);
   // console.log(restaurantList);
@@ -35,6 +38,7 @@ const Body = () => {
 
     setRestaurantList(jsonRest);
     setAllRestList(jsonRest);
+    console.log(jsonData);
   };
   console.log("Body rendered");
 
