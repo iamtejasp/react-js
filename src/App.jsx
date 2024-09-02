@@ -1,10 +1,11 @@
 import "./App.css";
-import ArrayStateProject from "./component-practice/ArrayStateProject";
+import UseEffectHook from "./component-practice/UseEffectHook";
 
 function App() {
   return (
     <>
-      <ArrayStateProject />
+      {/* <ArrayStateProject /> */}
+      <UseEffectHook />
     </>
   );
 }
