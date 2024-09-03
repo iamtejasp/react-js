@@ -1,11 +1,13 @@
 import "./App.css";
-import UseEffectHook from "./component-practice/UseEffectHook";
+import RenderingList from "./component-practice/RenderingList";
 
 function App() {
   return (
     <>
       {/* <ArrayStateProject /> */}
-      <UseEffectHook />
+      {/* <UseEffectHook /> */}
+      {/* <ConditionalRendering number={0} /> */}
+      <RenderingList />
     </>
   );
 }
