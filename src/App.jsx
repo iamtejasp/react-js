@@ -1,5 +1,5 @@
 import "./App.css";
-import RenderRawHtml from "./component-practice/RenderRawHtml";
+import SimpleTodoList from "./component-practice/todo-list/SimpleTodoList";
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
       {/* <ConditionalRendering number={0} /> */}
       {/* <RenderingList /> */}
       {/* <UserListProject /> */}
-      <RenderRawHtml />
+      {/* <RenderRawHtml /> */}
+      <SimpleTodoList />
     </>
   );
 }
