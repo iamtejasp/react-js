@@ -1,5 +1,5 @@
 import "./App.css";
-import SimpleTodoList from "./component-practice/todo-list/SimpleTodoList";
+import UseCallBackHooks from "./hooks/useCallBackHooks";
 
 function App() {
   return (
@@ -10,7 +10,10 @@ function App() {
       {/* <RenderingList /> */}
       {/* <UserListProject /> */}
       {/* <RenderRawHtml /> */}
-      <SimpleTodoList />
+      {/* <SimpleTodoList /> */}
+      {/* <UseRefHooks /> */}
+      {/* <UseMemoHooks /> */}
+      <UseCallBackHooks />
     </>
   );
 }
