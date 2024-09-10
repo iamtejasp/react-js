@@ -10,11 +10,11 @@ const URLS = {
 // BONUS:
 // const OPTIONS = {
 //   method: "POST",
-//   body: JSON.stringify({ name: "Kyle" }),
+//   body: JSON.stringify({ name: "Tejas" }),
 //   headers: {
 //     "Content-type": "application/json",
 //   },
-// }
+// };
 
 const UseFetchProject = () => {
   const [url, setUrl] = useState(URLS.USERS);
