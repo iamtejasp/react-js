@@ -1,5 +1,5 @@
 import "./App.css";
-import UseCallBackHooks from "./hooks/useCallBackHooks";
+import UseFetchProject from "./component-practice/UseFetchProject";
 
 function App() {
   return (
@@ -13,7 +13,9 @@ function App() {
       {/* <SimpleTodoList /> */}
       {/* <UseRefHooks /> */}
       {/* <UseMemoHooks /> */}
-      <UseCallBackHooks />
+      {/* <UseCallBackHooks /> */}
+      {/* <DarkMode /> */}
+      <UseFetchProject />
     </>
   );
 }
