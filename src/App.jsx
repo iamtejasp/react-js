@@ -1,5 +1,5 @@
 import "./App.css";
-import UseFetchProject from "./component-practice/UseFetchProject";
+import UseArrayProject from "./component-practice/UseArrayProject";
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
       {/* <UseMemoHooks /> */}
       {/* <UseCallBackHooks /> */}
       {/* <DarkMode /> */}
-      <UseFetchProject />
+      {/* <UseFetchProject /> */}
+      <UseArrayProject />
     </>
   );
 }
