@@ -1,5 +1,5 @@
 import "./App.css";
-import UseArrayProject from "./component-practice/UseArrayProject";
+import UseLocalStorage from "./component-practice/UseLocalStorage";
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
       {/* <UseCallBackHooks /> */}
       {/* <DarkMode /> */}
       {/* <UseFetchProject /> */}
-      <UseArrayProject />
+      {/* <UseArrayProject /> */}
+      <UseLocalStorage />
     </>
   );
 }
