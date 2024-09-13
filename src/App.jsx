@@ -1,5 +1,5 @@
 import "./App.css";
-import UseLocalStorage from "./component-practice/UseLocalStorage";
+import FormRefInput from "./forms/FormRefInput";
 
 function App() {
   return (
@@ -17,7 +17,9 @@ function App() {
       {/* <DarkMode /> */}
       {/* <UseFetchProject /> */}
       {/* <UseArrayProject /> */}
-      <UseLocalStorage />
+      {/* <UseLocalStorage /> */}
+      {/* <FormBasic /> */}
+      <FormRefInput />
     </>
   );
 }
