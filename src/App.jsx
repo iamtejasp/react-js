@@ -1,5 +1,5 @@
 import "./App.css";
-import FormRefInput from "./forms/FormRefInput";
+import BasicFormValidation from "./forms/BasicFormValidation";
 
 function App() {
   return (
@@ -19,7 +19,8 @@ function App() {
       {/* <UseArrayProject /> */}
       {/* <UseLocalStorage /> */}
       {/* <FormBasic /> */}
-      <FormRefInput />
+      {/* <FormRefInput /> */}
+      <BasicFormValidation />
     </>
   );
 }
