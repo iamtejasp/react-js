@@ -14,11 +14,11 @@ const StateBasicForm = () => {
     const emailValid = emailValidation(email);
     const passwordValid = passWordValidation(password);
 
+    setEmailError(emailValid);
+    setPasswordError(passwordValid);
+
     if (emailValid.length === 0 && passwordValid.length === 0) {
       alert("Success");
-    } else {
-      setEmailError(emailValid);
-      setPasswordError(passwordValid);
     }
   };
 
