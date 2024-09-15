@@ -7,9 +7,11 @@ const RefBasicForm = () => {
 
   const [emailError, setEmailError] = useState([]);
   const [passwordError, setPasswordError] = useState([]);
+  const [isAfterFirstSubmit, setIsAfterFirstSubmit] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsAfterFirstSubmit(true);
 
     const emailValid = emailValidation(email.current.value);
     const passwordValid = passWordValidation(password.current.value);
@@ -28,7 +30,19 @@ const RefBasicForm = () => {
         <label className="label" htmlFor="email">
           Email
         </label>
-        <input className="input" type="email" id="email" ref={email} />
+        <input
+          onChange={
+            isAfterFirstSubmit
+              ? (e) => {
+                  setEmailError(emailValidation(e.target.value));
+                }
+              : undefined
+          }
+          className="input"
+          type="email"
+          id="email"
+          ref={email}
+        />
         {emailError.length > 0 && (
           <div className="msg">{emailError.join(", ")}</div>
         )}
@@ -37,7 +51,19 @@ const RefBasicForm = () => {
         <label className="label" htmlFor="password">
           Password
         </label>
-        <input className="input" type="password" id="password" ref={password} />
+        <input
+          onChange={
+            isAfterFirstSubmit
+              ? (e) => {
+                  setPasswordError(passWordValidation(e.target.value));
+                }
+              : undefined
+          }
+          className="input"
+          type="password"
+          id="password"
+          ref={password}
+        />
         {passwordError.length > 0 && (
           <div className="msg">{passwordError.join(", ")}</div>
         )}

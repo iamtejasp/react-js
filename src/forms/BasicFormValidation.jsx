@@ -1,11 +1,11 @@
 import "./form.css";
-import RefBasicForm from "./RefBasicForm";
+import StateBasicForm from "./StateBasicForm";
 
 const BasicFormValidation = () => {
   return (
     <div>
-      {/* <StateBasicForm /> */}
-      <RefBasicForm />
+      <StateBasicForm />
+      {/* <RefBasicForm /> */}
     </div>
   );
 };

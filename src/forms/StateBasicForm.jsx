@@ -1,21 +1,25 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { emailValidation, passWordValidation } from "./validation";
 
 const StateBasicForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isAfterFirstSubmit, setIsAfterFirstSubmit] = useState(false);
 
-  const [emailError, setEmailError] = useState([]);
-  const [passwordError, setPasswordError] = useState([]);
+  const emailError = useMemo(() => {
+    return isAfterFirstSubmit ? emailValidation(email) : [];
+  }, [isAfterFirstSubmit, email]);
+
+  const passwordError = useMemo(() => {
+    return isAfterFirstSubmit ? passWordValidation(password) : [];
+  }, [isAfterFirstSubmit, password]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsAfterFirstSubmit(true);
 
     const emailValid = emailValidation(email);
     const passwordValid = passWordValidation(password);
-
-    setEmailError(emailValid);
-    setPasswordError(passwordValid);
 
     if (emailValid.length === 0 && passwordValid.length === 0) {
       alert("Success");
