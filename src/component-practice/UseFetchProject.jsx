@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useFetch } from "../custom-hooks/useFetch";
+import { useFetchReducer } from "../custom-hooks/useFetchReducer";
 
 const URLS = {
   USERS: "https://jsonplaceholder.typicode.com/users",
@@ -18,7 +18,8 @@ const URLS = {
 
 const UseFetchProject = () => {
   const [url, setUrl] = useState(URLS.USERS);
-  const { data, isLoading, isError } = useFetch(url);
+  // const { data, isLoading, isError } = useFetch(url);
+  const { data, isLoading, isError } = useFetchReducer(url);
 
   return (
     <>

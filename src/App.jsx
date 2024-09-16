@@ -1,5 +1,5 @@
 import "./App.css";
-import BasicFormValidation from "./forms/BasicFormValidation";
+import UseFetchProject from "./component-practice/UseFetchProject";
 
 function App() {
   return (
@@ -15,12 +15,14 @@ function App() {
       {/* <UseMemoHooks /> */}
       {/* <UseCallBackHooks /> */}
       {/* <DarkMode /> */}
-      {/* <UseFetchProject /> */}
+      <UseFetchProject />
       {/* <UseArrayProject /> */}
       {/* <UseLocalStorage /> */}
       {/* <FormBasic /> */}
       {/* <FormRefInput /> */}
-      <BasicFormValidation />
+      {/* <BasicFormValidation /> */}
+      {/* <HookForm /> */}
+      {/* <UseReducer /> */}
     </>
   );
 }
