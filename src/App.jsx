@@ -1,4 +1,5 @@
 import "./App.css";
+import ParentComponent from "./component-practice/context/ParentComponent";
 import UseFetchProject from "./component-practice/UseFetchProject";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       {/* <UseMemoHooks /> */}
       {/* <UseCallBackHooks /> */}
       {/* <DarkMode /> */}
-      <UseFetchProject />
+      {/* <UseFetchProject /> */}
       {/* <UseArrayProject /> */}
       {/* <UseLocalStorage /> */}
       {/* <FormBasic /> */}
@@ -23,6 +24,7 @@ function App() {
       {/* <BasicFormValidation /> */}
       {/* <HookForm /> */}
       {/* <UseReducer /> */}
+      <ParentComponent />
     </>
   );
 }
