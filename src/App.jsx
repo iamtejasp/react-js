@@ -1,6 +1,5 @@
 import "./App.css";
-import ParentComponent from "./component-practice/context/ParentComponent";
-import UseFetchProject from "./component-practice/UseFetchProject";
+import EnvironmentVariable from "./component-practice/EnvironmentVariable";
 
 function App() {
   return (
@@ -24,7 +23,8 @@ function App() {
       {/* <BasicFormValidation /> */}
       {/* <HookForm /> */}
       {/* <UseReducer /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
+      <EnvironmentVariable />
     </>
   );
 }
