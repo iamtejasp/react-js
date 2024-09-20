@@ -1,5 +1,5 @@
 import "./App.css";
-import EnvironmentVariable from "./component-practice/EnvironmentVariable";
+import { AdvancedTodo } from "./component-practice/advanced-todo-list/AdvancedTodo";
 
 function App() {
   return (
@@ -24,7 +24,8 @@ function App() {
       {/* <HookForm /> */}
       {/* <UseReducer /> */}
       {/* <ParentComponent /> */}
-      <EnvironmentVariable />
+      {/* <EnvironmentVariable /> */}
+      <AdvancedTodo />
     </>
   );
 }
