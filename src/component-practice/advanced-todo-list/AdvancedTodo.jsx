@@ -1,10 +1,11 @@
-import { useEffect, useReducer, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import "./todo.css";
-import { TodoItem } from "./TodoItem";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
+import TodoFilterForm from "./TodoFilterForm";
 
 const LOCAL_STORE_KEY = "TODO";
 const initialVal = [];
-
 const ACTION = {
   ADD: "ADD",
   UPDATE: "UPDATE",
@@ -12,24 +13,32 @@ const ACTION = {
   DELETE: "DELETE",
 };
 
+export const TodoContext = createContext();
+
 const reducerFn = (todo, { type, payload }) => {
   switch (type) {
     case ACTION.ADD:
       return [
         ...todo,
-        { name: payload, completed: false, id: crypto.randomUUID() },
+        { name: payload.name, completed: false, id: crypto.randomUUID() },
       ];
 
     case ACTION.TOGGLE:
       return todo.map((i) => {
-        const completed = payload.completed;
-        if (i.id === payload.todoId) return { ...i, completed };
-
+        const { id, completed } = payload;
+        if (i.id === id) return { ...i, completed };
         return i;
       });
 
     case ACTION.DELETE:
       return todo.filter((i) => i.id !== payload.todoId);
+
+    case ACTION.UPDATE:
+      return todo.map((item) => {
+        const { id, name } = payload;
+        if (item.id === id) return { ...item, name };
+        return item;
+      });
 
     default:
       return [];
@@ -37,14 +46,23 @@ const reducerFn = (todo, { type, payload }) => {
 };
 
 export const AdvancedTodo = () => {
-  const [newTodoName, setNewTodoName] = useState("");
-
+  const [filterText, setFilterText] = useState("");
+  const [checkComplete, setCheckComplete] = useState(false);
   const [todos, dispatch] = useReducer(reducerFn, initialVal, (initialVal) => {
     const localVal = JSON.parse(localStorage.getItem(LOCAL_STORE_KEY));
     if (!localVal) {
       return initialVal;
     } else {
       return localVal;
+    }
+  });
+
+  const filterTodo = todos.filter((item) => {
+    const check = checkComplete
+      ? item.name.includes(filterText) && !item.completed
+      : item.name.includes(filterText);
+    if (check) {
+      return item;
     }
   });
 
@@ -56,59 +74,46 @@ export const AdvancedTodo = () => {
     }
   }, [todos]);
 
-  function addNewTodo() {
-    if (newTodoName === "") {
-      alert("Please Enter Value");
-      return;
-    }
-
-    dispatch({ type: ACTION.ADD, payload: newTodoName });
-    setNewTodoName("");
+  function addNewTodo(name) {
+    dispatch({ type: ACTION.ADD, payload: { name } });
   }
 
   function toggleTodo(todoId, completed) {
-    dispatch({ type: ACTION.TOGGLE, payload: { todoId, completed } });
+    dispatch({
+      type: ACTION.TOGGLE,
+      payload: { id: todoId, completed: completed },
+    });
   }
 
   function deleteTodo(todoId) {
     dispatch({ type: ACTION.DELETE, payload: { todoId } });
   }
 
-  return (
-    <>
-      <div className="filter-form">
-        <div className="filter-form-group">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" value="" />
-        </div>
-        <label>
-          <input type="checkbox" />
-          Hide Completed
-        </label>
-      </div>
-      <ul id="list">
-        {todos.map((todo) => {
-          return (
-            <TodoItem
-              key={todo.id}
-              {...todo}
-              toggleTodo={toggleTodo}
-              deleteTodo={deleteTodo}
-            />
-          );
-        })}
-      </ul>
+  function updateTodoName(todoId, updatedName) {
+    dispatch({
+      type: ACTION.UPDATE,
+      payload: { id: todoId, name: updatedName },
+    });
+  }
 
-      <div id="new-todo-form">
-        <label htmlFor="todo-input">New Todo</label>
-        <input
-          type="text"
-          id="todo-input"
-          value={newTodoName}
-          onChange={(e) => setNewTodoName(e.target.value)}
-        />
-        <button onClick={addNewTodo}>Add Todo</button>
-      </div>
-    </>
+  return (
+    <TodoContext.Provider
+      value={{
+        toggleTodo,
+        deleteTodo,
+        addNewTodo,
+        todos,
+        filterText,
+        setFilterText,
+        checkComplete,
+        setCheckComplete,
+        filterTodo,
+        updateTodoName,
+      }}
+    >
+      <TodoFilterForm />
+      <TodoList />
+      <TodoForm />
+    </TodoContext.Provider>
   );
 };
