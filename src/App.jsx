@@ -1,5 +1,5 @@
 import "./App.css";
-import { AdvancedTodo } from "./component-practice/advanced-todo-list/AdvancedTodo";
+import ForwardRef from "./component-practice/ForwardRef";
 
 function App() {
   return (
@@ -25,7 +25,8 @@ function App() {
       {/* <UseReducer /> */}
       {/* <ParentComponent /> */}
       {/* <EnvironmentVariable /> */}
-      <AdvancedTodo />
+      {/* <AdvancedTodo /> */}
+      <ForwardRef />
     </>
   );
 }
