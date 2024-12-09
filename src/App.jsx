@@ -1,5 +1,6 @@
 import "./App.css";
-import ForwardRef from "./component-practice/ForwardRef";
+
+import Model from "./component-practice/model/Model";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
       {/* <ParentComponent /> */}
       {/* <EnvironmentVariable /> */}
       {/* <AdvancedTodo /> */}
-      <ForwardRef />
+      {/* <ForwardRef /> */}
+      <Model />
     </>
   );
 }
