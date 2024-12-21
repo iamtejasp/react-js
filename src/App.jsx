@@ -1,6 +1,5 @@
 import "./App.css";
-
-import Model from "./component-practice/model/Model";
+import DatePickerContainer from "./component-practice/date-picker/DatePickerContainer";
 
 function App() {
   return (
@@ -28,7 +27,8 @@ function App() {
       {/* <EnvironmentVariable /> */}
       {/* <AdvancedTodo /> */}
       {/* <ForwardRef /> */}
-      <Model />
+      {/* <Model /> */}
+      <DatePickerContainer />
     </>
   );
 }
